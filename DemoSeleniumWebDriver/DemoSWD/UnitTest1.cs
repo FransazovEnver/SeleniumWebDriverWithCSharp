@@ -18,6 +18,9 @@ namespace DemoSWD
 
             //Navigate to Url
             driver.Navigate().GoToUrl("https://wikipedia.org");
+
+            //close the browser
+            driver.Quit();
         }
     }
 }
