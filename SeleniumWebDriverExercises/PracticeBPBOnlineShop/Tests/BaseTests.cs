@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PracticeBPBOnlineShop
 {
-    public class TestClass : BasePOMTests
+    public class BaseTests : BasePage
     {
         [Test]
         public void Test()

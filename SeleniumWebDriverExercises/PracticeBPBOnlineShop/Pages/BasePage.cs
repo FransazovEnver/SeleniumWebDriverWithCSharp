@@ -4,10 +4,10 @@ using OpenQA.Selenium.Support.UI;
 
 namespace PracticeBPBOnlineShop
 {
-    public class BasePOMTests
+    public class BasePage
     {
-        public IWebDriver driver;
-        public WebDriverWait wait;
+        protected IWebDriver driver; 
+        protected WebDriverWait wait;
 
         [SetUp]
         public void Setup()
