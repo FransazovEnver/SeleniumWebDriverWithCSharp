@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace PracticeBPBOnlineShop.Tests
 {
-    internal class LoginTests
+    public class LoginTests : BaseTests
+
     {
+        [Test]
+        public void Test_RegisterUser()
+        {
+
+        }
     }
 }

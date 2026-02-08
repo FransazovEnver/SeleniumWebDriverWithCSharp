@@ -1,32 +1,42 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 
 namespace PracticeBPBOnlineShop
 {
     public class BasePage
     {
         protected IWebDriver driver; 
+
         protected WebDriverWait wait;
 
-        [SetUp]
-        public void Setup()
+        //This is a constructor with driver, explicit wait and main Url
+        public BasePage(IWebDriver driver)
         {
-            driver = new ChromeDriver();
-
-            driver.Navigate().GoToUrl("https://practice.bpbonline.com/");
-
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-            
+            this.driver = driver;   
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            driver.Navigate().GoToUrl("http://practice.bpbonline.com/");
         }
 
-       
-        [TearDown]
-        public void TearDown()
+        //Method who wait for element to be visible
+        protected IWebElement FindElement(By locator)
         {
-            driver.Quit();
-            driver.Dispose();
+            return wait.Until(ExpectedConditions.ElementIsVisible(locator));
+        }
+
+        //Clicking element method 
+        protected void Click(By locator)
+        {
+            FindElement(locator).Click();
+        }
+
+        //Typing method
+        protected void Type(By locator, string text)
+        {
+            var element = FindElement(locator);
+            element.Clear();
+            element.SendKeys(text);
         }
     }
 }
