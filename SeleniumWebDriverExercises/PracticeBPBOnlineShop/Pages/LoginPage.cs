@@ -5,49 +5,51 @@ namespace PracticeBPBOnlineShop.Pages
 {
     public class LoginPage : BasePage
     {
-        private readonly By continueButton = By.XPath("//span[text()='Continue']");
-
-        private readonly By buttonMyaccount = By.XPath("private readonly By");
-
-        private readonly By gender = By.XPath("//input[@value='m']");
-
-        private readonly By firstnameInput = By.XPath("//input[@name='firstname']");
-
-        private readonly By lastnameInput = By.XPath("//input[@name='lastname']");
-
-        private readonly By dateOfBirth = By.XPath("//input[@name='dob']");
-
-        private readonly By emailAdress = By.XPath("//input[@name='email_address']");
-
-        private readonly By companyName = By.XPath("//input[@name='company']");
-
-        private readonly By streetAddress = By.XPath("//input[@name='street_address']");
-
-        private readonly By suburb = By.XPath("//input[@name='suburb']");
-
-        private readonly By postCode = By.XPath("//input[@name='postcode']");
-
-        private readonly By city = By.XPath("//input[@name='city']");
-
-        private readonly By stateProvince = By.XPath("//input[@name='state']");
-
-        private readonly By country = By.XPath("//select[@name='country']");
-
-        private readonly By telephoneNumber = By.XPath("//input[@name='telephone']");
-
-        private readonly By faxNumber = By.XPath("//input[@name='fax']");
-
-        private readonly By newsLetter = By.XPath("//input[@name='newsletter']");
-
-        private readonly By password = By.XPath("//input[@name='password']");
-
-        private readonly By comfirmPassword = By.XPath("//input[@name='confirmation']");
-
-        private readonly By submitButton = By.XPath("//button[@type='submit']");
- 
-        public LoginPage(IWebDriver driver) : base(driver) 
+        public LoginPage(IWebDriver driver) : base(driver)
         {
 
         }
+
+        public IWebElement buttonMyAccount => driver.FindElement(By.XPath("//span[text()='My Account']"));
+
+        public IWebElement continueButton => driver.FindElement(By.XPath("//span[text()='Continue']"));
+
+        public IWebElement gender => driver.FindElement(By.XPath("//input[@value='m']"));
+
+        public IWebElement firstnameInput => driver.FindElement(By.XPath("//input[@name='firstname']"));
+
+        public IWebElement lastnameInput => driver.FindElement(By.XPath("//input[@name='lastname']"));
+
+        public IWebElement dateOfBirth => driver.FindElement(By.XPath("//input[@name='dob']"));
+
+        public IWebElement emailAdress => driver.FindElement(By.XPath("//input[@name='email_address']"));
+
+        public IWebElement companyName => driver.FindElement(By.XPath("//input[@name='company']"));
+
+        public IWebElement streetAddress => driver.FindElement(By.XPath("//input[@name='street_address']"));
+
+        public IWebElement suburb => driver.FindElement(By.XPath("//input[@name='suburb']"));
+
+        public IWebElement postCode => driver.FindElement(By.XPath("//input[@name='postcode']"));
+
+        public IWebElement city => driver.FindElement(By.XPath("//input[@name='city']"));
+
+        public IWebElement stateProvince => driver.FindElement(By.XPath("//input[@name='state']"));
+
+        public IWebElement country => driver.FindElement(By.XPath("//select[@name='country']"));
+
+        public IWebElement telephoneNumber => driver.FindElement(By.XPath("//input[@name='telephone']"));
+
+        public IWebElement faxNumber => driver.FindElement(By.XPath("//input[@name='fax']"));
+
+        public IWebElement newsLetter => driver.FindElement(By.XPath("//input[@name='newsletter']"));
+
+        public IWebElement password => driver.FindElement(By.XPath("//input[@name='password']"));
+
+        public IWebElement comfirmPassword => driver.FindElement(By.XPath("//input[@name='confirmation']"));
+
+        public IWebElement submitButton => driver.FindElement(By.XPath("//button[@type='submit']"));
+ 
+        
     }
 }
