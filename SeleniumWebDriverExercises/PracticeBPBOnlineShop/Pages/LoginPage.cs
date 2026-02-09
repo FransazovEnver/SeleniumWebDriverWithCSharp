@@ -49,7 +49,8 @@ namespace PracticeBPBOnlineShop.Pages
         public IWebElement comfirmPassword => driver.FindElement(By.XPath("//input[@name='confirmation']"));
 
         public IWebElement submitButton => driver.FindElement(By.XPath("//button[@type='submit']"));
- 
+
         
+
     }
 }

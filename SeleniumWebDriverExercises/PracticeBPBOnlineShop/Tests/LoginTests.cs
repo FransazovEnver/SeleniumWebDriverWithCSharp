@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PracticeBPBOnlineShop.Tests
 {
-    public class LoginTests : BaseTests
+    public class LoginTests : BaseTests 
 
     {
         [Test]
@@ -16,41 +16,45 @@ namespace PracticeBPBOnlineShop.Tests
         {
             var loginPage = new LoginPage(driver);
 
+            var basePage = new LoginPage(driver);
+
             loginPage.buttonMyAccount.Click();
 
             loginPage.continueButton.Click();
 
             loginPage.gender.Click();
 
-            loginPage.lastnameInput.Click();
+            loginPage.firstnameInput.SendKeys("test");
 
-            loginPage.dateOfBirth.SendKeys("02/05/2000");
+            loginPage.lastnameInput.SendKeys("test!");
 
-            loginPage.emailAdress.Click();
+            loginPage.dateOfBirth.SendKeys("10/10/2000");
 
-            loginPage.companyName.Click();
+            loginPage.emailAdress.SendKeys("test@test.bg");
 
-            loginPage.streetAddress.Click();
+            loginPage.companyName.SendKeys("IBM");
 
-            loginPage.suburb.Click();
+            loginPage.streetAddress.SendKeys("Sezam");
 
-            loginPage.postCode.Click();
+            loginPage.suburb.SendKeys("Mahalata");
 
-            loginPage.city.Click();
+            loginPage.postCode.SendKeys("4100");
 
-            loginPage.stateProvince.Click();
+            loginPage.city.SendKeys("Plovdiv");
 
-            loginPage.country.Click();
+            loginPage.stateProvince.SendKeys("Plovdiv");
 
-            loginPage.telephoneNumber.Click();
+            loginPage.country.SendKeys("Bulgaria");
 
-            loginPage.faxNumber.Click();
+            loginPage.telephoneNumber.SendKeys("0895123456");
+
+            loginPage.faxNumber.SendKeys("0895123456");
 
             loginPage.newsLetter.Click();
 
-            loginPage.password.Click();
+            loginPage.password.SendKeys("Password");
 
-            loginPage.comfirmPassword.Click();
+            loginPage.comfirmPassword.SendKeys("Password");
 
             loginPage.submitButton.Click();
 
