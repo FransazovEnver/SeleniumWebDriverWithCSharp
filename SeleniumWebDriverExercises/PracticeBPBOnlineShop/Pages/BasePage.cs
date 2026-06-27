@@ -11,9 +11,14 @@ namespace PracticeBPBOnlineShop
 
         protected WebDriverWait wait;
 
+
         //This is a constructor with driver, explicit wait and main Url
         public BasePage(IWebDriver driver)
         {
+            var options = new ChromeOptions();
+            options.AddArgument("--headless=new");
+            driver = new ChromeDriver(options);
+
             this.driver = driver;   
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             driver.Navigate().GoToUrl("http://practice.bpbonline.com/");
