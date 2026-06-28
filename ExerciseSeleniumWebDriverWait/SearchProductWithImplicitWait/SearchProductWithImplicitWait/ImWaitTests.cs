@@ -63,11 +63,8 @@ namespace SearchProductWithImplicitWait
         [TearDown]
         public void TearDown()
         {
-            if (driver != null)
-            {
-                driver?.Quit();
+                driver.Quit();
                 driver.Dispose();
-            }
         }
     }
 }
