@@ -1,5 +1,7 @@
 <Solution>
-  <Project Path="SearchProductWithImplicitWait/SearchProductWithImplicitWait.csproj" />
-  <Project Path="SearchWithExplictWait/SearchWithExplictWait.csproj" />
-  <Project Path="WindowHadles/WindowHadles.csproj" Id="04a2fc20-5567-4c4d-872e-affbe8b82032" />
+  <Project Path="Alerts/04.Alerts.csproj" Id="a72241c3-249a-45ba-842d-543f1a03745e" />
+  <Project Path="IFrame/05.IFrame.csproj" Id="a7060b46-f6be-454f-9ca5-e8d3543f36d7" />
+  <Project Path="SearchProductWithImplicitWait/01.SearchProductWithImplicitWait.csproj" />
+  <Project Path="SearchWithExplictWait/02.SearchWithExplictWait.csproj" />
+  <Project Path="WindowHadles/03.WindowHadles.csproj" Id="04a2fc20-5567-4c4d-872e-affbe8b82032" />
 </Solution>
