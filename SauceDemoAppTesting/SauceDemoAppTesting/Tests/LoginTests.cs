@@ -38,7 +38,6 @@ namespace SauceDemoAppTesting.Tests
         }
 
         [Test]
-
         public void TestLoginWithEmptyFields()
         {
             PerformLogin("", "");
@@ -46,6 +45,16 @@ namespace SauceDemoAppTesting.Tests
             string errorMessage = loginPage.GetErrorMessage();
 
             Assert.That(errorMessage, Is.EqualTo("Epic sadface: Username is required"));
+        }
+
+        [Test]
+        public void TestLoginWithEmptyUsernameField()
+        {
+            PerformLogin("standard_user", "");
+            var loginPage = new LoginPage(driver);
+            string errorMessage = loginPage.GetErrorMessage();
+
+            Assert.That(errorMessage, Is.EqualTo("Epic sadface: Password is required"));
         }
     }
 }
