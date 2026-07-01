@@ -16,5 +16,17 @@ namespace SauceDemoAppTesting.Tests
             var inventoryPage = new InventoryPage(driver);
             Assert.That(inventoryPage.IsPageLoaded(), Is.True, "Login was not succesfull");
         }
+
+        [Test]
+        public void TestLoginWithInvalidCredentials()
+        {
+            PerformLogin("koko_user", "invalidPass"); //Epic sadface: Username and password do not match any user in this service
+
+            var loginPage = new LoginPage(driver);
+            string errorMassage = loginPage.GetErrorMessage();
+
+            Assert.That(errorMassage, Is.EqualTo("Epic sadface: Username and password do not match any user in this service"), "User was able too log in");   
+
+        }
     }
 }
