@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using SauceDemoAppTesting.Pages;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -31,7 +32,13 @@ namespace SauceDemoAppTesting.Tests
 
         protected void PerformLogin(string username, string password)
         {
-            //login steps
+            driver.Navigate().GoToUrl("https://www.saucedemo.com/");
+
+            var loginPage = new LoginPage(driver);
+
+            loginPage.TypeUserName(username);
+            loginPage.TypePassword(password);
+            loginPage.ClickLoginButton();
         }
     }
 }
