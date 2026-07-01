@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,7 +20,33 @@ namespace SauceDemoAppTesting.Pages
 
         protected IWebElement FindElement(By locator)
         {
-            return wait.Until(d => d.FindElement(locator));
+            return wait.Until(drv =>
+            {
+                var element = drv.FindElement(locator);
+                return element.Displayed ? element : null;
+            });
+        }
+
+        protected IReadOnlyCollection<IWebElement> FindElements(By locator)
+        {
+            return driver.FindElements(locator);
+        }
+
+        protected void Click(By locator)
+        {
+            FindElement(locator).Click();
+        }
+
+        protected void Type(By locator, string text)
+        {
+            var element = FindElement(locator);
+            element.Clear();
+            element.SendKeys(text);
+        }
+
+        protected string GetText(By locator)
+        {
+            return FindElement(locator).Text;
         }
     }
 }
