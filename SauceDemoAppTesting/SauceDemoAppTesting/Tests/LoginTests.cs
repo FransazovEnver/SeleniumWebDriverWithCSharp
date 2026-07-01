@@ -8,7 +8,6 @@ namespace SauceDemoAppTesting.Tests
     public class LoginTests : BaseTest
     {
         [Test]
-
         public void TestLoginValidCredentials()
         {
             PerformLogin("standard_user", "secret_sauce");
